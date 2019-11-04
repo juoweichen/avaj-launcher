@@ -1,13 +1,13 @@
 package avajlaunch;
 
-public class JetPlane extends Aircraft implements Flyable
+public class Baloon extends Aircraft implements Flyable
 {
 	WeatherTower weatherTower;
-	
 
-	public JetPlane(String n, Coordinates co)
+	public Baloon(String n, Coordinates co)
 	{
 		super(n, co);
+		// AvajLaunch.writer.append("Baloon created");
 	}
 
 	public void updateConditions()
@@ -18,31 +18,31 @@ public class JetPlane extends Aircraft implements Flyable
 		weather = weatherTower.getWeather(coordinates);
 		if (weather.equals("SUN"))
 		{
-			message = tag + ": What a bueatiful day!\n";
-			coordinates.changeCoordinates(0, 10, 2);
+			message = tag + ": Let's enjoy the good weather and take some pics\n";
+			coordinates.changeCoordinates(2, 0, 4);
 		}
 		else if (weather.equals("RAIN"))
 		{
-			message = tag + ": It's raining. Better watch out for lightings.\n";
-			coordinates.changeCoordinates(0, 5, 0);
+			message = tag + ": It's raining. Let cook some soup.\n";
+			coordinates.changeCoordinates(0, 0, 5);
 		}
 		else if (weather.equals("FOG"))
 		{
-			message = tag + ": It's foggy. turn on head light\n";
-			coordinates.changeCoordinates(0, 1, 0);
+			message = tag + ": It's foggy. where are we?\n";
+			coordinates.changeCoordinates(0, 0, -3);
 		}
 		else if (weather.equals("SNOW"))
 		{
-			message = tag + ": Oh, Winter is coming.\n";
-			coordinates.changeCoordinates(0, 0, -7);
+			message = tag + ": Want some free ice cream?\n";
+			coordinates.changeCoordinates(0, 0, -15);
 		}
-
+		
 		try
 		{
 			AvajLaunch.writer.append(message);
 			if (coordinates.getHeight() <= 0)
 			{
-				AvajLaunch.writer.append(tag + ": Landing, thank you to flight with us\n");
+				AvajLaunch.writer.append(tag + ": Landing, hope you enjoy this baloon trip\n");
 				weatherTower.unregister(this);
 			}
 		}

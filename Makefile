@@ -1,5 +1,6 @@
 NAME = avajlaunch
 MAIN_CLASS = AvajLaunch
+TARGET = resources/scenario.txt # make run TARGET=XXX
 
 JC = javac
 JAVA = java
@@ -16,7 +17,7 @@ $(NAME):
 	@$(JC) $(JFLAGS) $(SRCS)
 	@echo "\033[32mJava compiled\033[0m"
 run:
-	@$(JAVA) $(NAME).$(MAIN_CLASS)
+	@$(JAVA) $(NAME).$(MAIN_CLASS) $(TARGET)
 
 clean:
 	@rm -rf $(NAME)

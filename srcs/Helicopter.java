@@ -1,13 +1,13 @@
 package avajlaunch;
 
-public class JetPlane extends Aircraft implements Flyable
+public class Helicopter extends Aircraft implements Flyable
 {
 	WeatherTower weatherTower;
-	
 
-	public JetPlane(String n, Coordinates co)
+	public Helicopter(String n, Coordinates co)
 	{
 		super(n, co);
+		// AvajLaunch.writer.append("Helicopter created");
 	}
 
 	public void updateConditions()
@@ -18,23 +18,23 @@ public class JetPlane extends Aircraft implements Flyable
 		weather = weatherTower.getWeather(coordinates);
 		if (weather.equals("SUN"))
 		{
-			message = tag + ": What a bueatiful day!\n";
-			coordinates.changeCoordinates(0, 10, 2);
+			message = tag + ": It's hot in heli!\n";
+			coordinates.changeCoordinates(10, 0, 4);
 		}
 		else if (weather.equals("RAIN"))
 		{
-			message = tag + ": It's raining. Better watch out for lightings.\n";
-			coordinates.changeCoordinates(0, 5, 0);
+			message = tag + ": I need a window brush!\n";
+			coordinates.changeCoordinates(5, 0, 0);
 		}
 		else if (weather.equals("FOG"))
 		{
-			message = tag + ": It's foggy. turn on head light\n";
-			coordinates.changeCoordinates(0, 1, 0);
+			message = tag + ": We lost in the fog...\n";
+			coordinates.changeCoordinates(1, 0, 0);
 		}
 		else if (weather.equals("SNOW"))
 		{
-			message = tag + ": Oh, Winter is coming.\n";
-			coordinates.changeCoordinates(0, 0, -7);
+			message = tag + ": My rotor freezen!\n";
+			coordinates.changeCoordinates(0, 0, -12);
 		}
 
 		try
@@ -42,7 +42,7 @@ public class JetPlane extends Aircraft implements Flyable
 			AvajLaunch.writer.append(message);
 			if (coordinates.getHeight() <= 0)
 			{
-				AvajLaunch.writer.append(tag + ": Landing, thank you to flight with us\n");
+				AvajLaunch.writer.append(tag + ": Landing, OMGGGGGGGGG, we're crashing, WAAAAAAAA\n");
 				weatherTower.unregister(this);
 			}
 		}

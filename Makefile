@@ -1,6 +1,7 @@
 NAME = avajlaunch
 MAIN_CLASS = AvajLaunch
 TARGET = resources/scenario.txt # make run TARGET=XXX
+SIMU = simulation.txt
 
 JC = javac
 JAVA = java
@@ -21,6 +22,7 @@ run:
 
 clean:
 	@rm -rf $(NAME)
+	@rm -rf $(SIMU)
 	@echo "\033[31mPackage clean\033[0m"
 
 re: clean all

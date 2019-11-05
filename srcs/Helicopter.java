@@ -42,7 +42,7 @@ public class Helicopter extends Aircraft implements Flyable
 			AvajLaunch.writer.append(message);
 			if (coordinates.getHeight() <= 0)
 			{
-				AvajLaunch.writer.append(tag + ": Landing, OMGGGGGGGGG, we're crashing, WAAAAAAAA\n");
+				AvajLaunch.writer.append(tag + ": OMGGGGGGGGG, we're crashing, WAAAAAAAA\n");
 				weatherTower.unregister(this);
 			}
 		}

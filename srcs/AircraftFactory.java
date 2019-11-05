@@ -5,17 +5,18 @@ public class AircraftFactory
 	public static boolean checkAircraft(String[] lineSplit)
 	{
 		int lo, la, he;
+		String name = lineSplit[0] + "#" + lineSplit[1];
 
 		if (lineSplit.length != 5)
 		{
-			System.out.println("Incorrect line numbers");
+			System.out.println(name + ": Incorrect line numbers");
 			return false;
 		}
 		else if (	!lineSplit[0].equalsIgnoreCase("JetPlane") &&
 					!lineSplit[0].equalsIgnoreCase("Helicopter") &&
 					!lineSplit[0].equalsIgnoreCase("Baloon"))
 		{
-			System.out.println("Not such kinds of aircraft");
+			System.out.println(name + ": Not such kinds of aircraft");
 			return false;
 		}
 		else
@@ -28,7 +29,7 @@ public class AircraftFactory
 			} 
 			catch (NumberFormatException e) 
 			{
-				System.err.println("Number format incorrect");
+				System.err.println(name + ": Number format incorrect");
 				return false;
 			}
 		}

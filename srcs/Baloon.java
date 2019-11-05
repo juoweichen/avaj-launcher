@@ -42,7 +42,7 @@ public class Baloon extends Aircraft implements Flyable
 			AvajLaunch.writer.append(message);
 			if (coordinates.getHeight() <= 0)
 			{
-				AvajLaunch.writer.append(tag + ": Landing, hope you enjoy this baloon trip\n");
+				AvajLaunch.writer.append(tag + ": Hope you enjoy this baloon trip\n");
 				weatherTower.unregister(this);
 			}
 		}

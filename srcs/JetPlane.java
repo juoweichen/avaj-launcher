@@ -42,7 +42,7 @@ public class JetPlane extends Aircraft implements Flyable
 			AvajLaunch.writer.append(message);
 			if (coordinates.getHeight() <= 0)
 			{
-				AvajLaunch.writer.append(tag + ": Landing, thank you to flight with us\n");
+				AvajLaunch.writer.append(tag + ": Landing, thank you to fly with us\n");
 				weatherTower.unregister(this);
 			}
 		}

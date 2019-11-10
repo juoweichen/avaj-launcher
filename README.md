@@ -1,5 +1,4 @@
 # avaj-launcher
-42 java project
 
 ## UML design pattern
 <img src="https://github.com/pootitan/avaj-launcher/blob/master/resources/avaj_uml.jpg">
